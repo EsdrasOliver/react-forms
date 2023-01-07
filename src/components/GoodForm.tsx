@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import validator from "validator";
 
+//interface para tipar o formulário e só isso muda para o react 
 interface FormData {
   name: string;
   email: string;
