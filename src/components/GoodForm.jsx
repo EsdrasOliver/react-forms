@@ -1,4 +1,9 @@
-import { useForm } from "react-hook-form";
+// REACT HOOK FORM
+// rodou os comandos para instalar
+//    react hook form
+//    validator para validar o campo de senha 
+
+import { useForm } from "react-hook-form"; // hook do React Hook Form
 import { isEmail } from "validator";
 
 const GoodForm = () => {
@@ -6,10 +11,11 @@ const GoodForm = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors }, // informa o erro 
   } = useForm();
+  // register é para registrar os dados informados pelo usuario
 
-  const watchPassword = watch("password");
+  const watchPassword = watch("password"); // para monitorar o input com essa classe | ele renderiza cada vez q o usuario digita
 
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
@@ -29,7 +35,7 @@ const GoodForm = () => {
         />
         {errors?.name?.type === "required" && (
           <p className="error-message">Name is required.</p>
-        )}
+        )} {{ /* Aparece a mgs de erro */ }}
       </div>
 
       <div className="form-group">
@@ -59,7 +65,7 @@ const GoodForm = () => {
           type="password"
           placeholder="Password"
           {...register("password", { required: true, minLength: 7 })}
-        />
+        /> {{ /* a senha precisa ter 7 caracteres */ }}
 
         {errors?.password?.type === "required" && (
           <p className="error-message">Password is required.</p>
